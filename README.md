@@ -1,46 +1,35 @@
-# Cordova Hello World Plugin
+# Cordova Social Embed Plugin
 
-Simple plugin that returns your string prefixed with hello.
+This plugin will call javascript function defined in your app when user click on any iFrame links. Will solve the issues of instagram and twitter embeds if used properly.
 
-Greeting a user with "Hello, world" is something that could be done in JavaScript. This plugin provides a simple example demonstrating how Cordova plugins work.
+## version
+0.0.1
 
 ## Using
 
-Create a new Cordova Project
-
-    $ cordova create hello com.example.helloapp Hello
-    
 Install the plugin
 
-    $ cd hello
-    $ cordova plugin add https://github.com/don/cordova-plugin-hello.git
-    
+    $ cordova plugin add cordova-plugin-inappbrowser
+    $ cordova plugin add https://jagraj47@bitbucket.org/jagraj47/cordova-plugin-social-embeds.git
 
-Edit `www/js/index.js` and add the following code inside `onDeviceReady`
+
+Edit `index.html` and add the following code
 
 ```js
-    var success = function(message) {
-        alert(message);
-    }
-
-    var failure = function() {
-        alert("Error calling Hello Plugin");
-    }
-
-    hello.greet("World", success, failure);
+    <script>
+        window.openLinkInAppBrowser = function (url) {
+               console.log('Linked click  - ', url);
+               window.open(url, '_blank');
+        }
+    </script>
 ```
 
-Install iOS or Android platform
+Use following code in your component where loading embeds
 
-    cordova platform add ios
-    cordova platform add android
-    
-Run the code
-
-    cordova run 
-
-## More Info
-
-For more information on setting up Cordova see [the documentation](http://cordova.apache.org/docs/en/latest/guide/cli/index.html)
-
-For more info on plugins see the [Plugin Development Guide](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html)
+```js
+    declare const SocialEmbeds; // In case you are getting typescript errorMessage
+    // Enable plugin
+    SocialEmbeds.updatePluginToWhitelist('url1,ur2,url3,...', function(success){}, function(failure){});
+    // Disable plugin
+    SocialEmbeds.updatePluginToWhitelist('', function(success){}, function(failure){});
+```
