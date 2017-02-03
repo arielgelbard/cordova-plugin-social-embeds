@@ -10,7 +10,7 @@ This plugin will call javascript function defined in your app when user click on
 Install the plugin
 
     $ cordova plugin add cordova-plugin-inappbrowser
-    $ cordova plugin add https://jagraj47@bitbucket.org/jagraj47/cordova-plugin-social-embeds.git
+    $ cordova plugin add https://github.com/arielgelbard/cordova-plugin-social-embeds.git
 
 
 Edit `index.html` and add the following code
