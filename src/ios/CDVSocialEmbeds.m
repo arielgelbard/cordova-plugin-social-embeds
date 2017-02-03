@@ -1,6 +1,6 @@
-#import "HWPHello.h"
+#import "CDVSocialEmbeds.h"
 
-@implementation HWPHello
+@implementation CDVSocialEmbeds
 
 -(id)init {
     if ( self = [super init] ) {
@@ -9,7 +9,7 @@
     return self;
 }
 
-- (void)greet:(CDVInvokedUrlCommand*)command
+- (void)updatePluginToWhitelist:(CDVInvokedUrlCommand*)command
 {
     NSString* name = [[command arguments] objectAtIndex:0];
 
