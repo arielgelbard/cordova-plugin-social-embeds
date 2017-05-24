@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-social-embed",
+  "version": "0.0.1",
+  "description": "Cordova Plugin Social Embed",
+  "cordova": {
+    "id": "cordova-plugin-social-embed",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arielgelbard/cordova-plugin-social-embeds.git"
+  },
+  "keywords": [
+    "cordova",
+    "facebook",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-browser",
+    "social",
+    "sharing"
+  ],
+  "license": "Apache-2.0"
+}
